@@ -29,12 +29,9 @@ export const HeroSection = () => {
           {/* Centered Content */}
           <div className="space-y-8 text-center max-w-4xl">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Trusted by 500+ Schools & Institutions
-            </div>
+            
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] animate-fade-up text-white drop-shadow-lg">
+            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] animate-fade-up text-white drop-shadow-lg font-mono text-center md:text-6xl">
               Learning That{" "}
               <span className="text-gradient-primary">Takes Flight</span>
             </h1>
@@ -81,24 +78,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap items-center justify-center gap-8 pt-8 animate-fade-up" style={{
-            animationDelay: "0.4s"
-          }}>
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-white">5M+</p>
-                <p className="text-sm text-white/60">Learning Components</p>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-white">500+</p>
-                <p className="text-sm text-white/60">Partner Schools</p>
-              </div>
-              <div className="w-px h-12 bg-white/20" />
-              <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-white">4.9★</p>
-                <p className="text-sm text-white/60">Parent Rating</p>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>
