@@ -76,6 +76,8 @@ export const TrustSection = () => {
           </h2>
         </div>
 
+        {/* Stats Cards - Commented Out */}
+        {/*
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-20 max-w-5xl mx-auto">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
@@ -93,6 +95,7 @@ export const TrustSection = () => {
             );
           })}
         </div>
+        */}
 
         {/* Partner Logos */}
         <div className="text-center mb-16">
@@ -112,7 +115,8 @@ export const TrustSection = () => {
           </div>
         </div>
 
-        {/* Case Studies */}
+        {/* Case Studies - Commented Out */}
+        {/*
         <div className="max-w-5xl mx-auto">
           <h3 className="text-xl font-bold text-center mb-8">Success Stories</h3>
           <div className="grid md:grid-cols-3 gap-6">
@@ -130,6 +134,7 @@ export const TrustSection = () => {
             ))}
           </div>
         </div>
+        */}
       </div>
     </section>
   );

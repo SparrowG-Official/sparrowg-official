@@ -18,13 +18,13 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <AudienceSegmentation />
         <ProductShowcase />
         <ServicesCarousel />
+        <AudienceSegmentation />
+        <FeaturedProducts />
         <WhySparrowG />
         <TrustSection />
         <ReviewsSection />
-        <FeaturedProducts />
         <AboutSection />
         <FutureVision />
         <ContactSection />

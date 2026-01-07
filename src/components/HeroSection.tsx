@@ -12,73 +12,64 @@ export const HeroSection = () => {
     });
   };
   return <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background image with overlay */}
+      {/* Background image with subtle overlay */}
       <div className="absolute inset-0 overflow-hidden">
-        <img src="/images/DSC00817.JPG" alt="Kids learning with curiosity and engagement" className="w-full h-full object-cover scale-105" />
-        {/* Premium gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+        <img src="/images/DSC00817.JPG" alt="Kids learning with curiosity and engagement" className="w-full h-full object-cover brightness-105" />
+        {/* Subtle dark gradient at top for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+        {/* Slight vignette effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/3 left-1/4 w-48 h-48 bg-secondary/20 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="flex items-center justify-center min-h-[85vh]">
-          {/* Centered Content */}
-          <div className="space-y-8 text-center max-w-4xl">
-            {/* Badge */}
-            
-
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] animate-fade-up text-white drop-shadow-lg font-mono text-center md:text-6xl">
-              Learning That{" "}
-              <span className="text-gradient-primary">Takes Flight</span>
+          {/* Centered Content - positioned lower */}
+          <div className="space-y-8 text-center max-w-6xl mt-40 md:mt-48">
+            {/* Modern Hero Title - Single line with LEARN in primary color */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight animate-fade-up tracking-tighter">
+              <span className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]" style={{
+                textShadow: '2px 2px 0 rgba(0,0,0,0.3), 4px 4px 8px rgba(0,0,0,0.5)'
+              }}>
+                BUILD. PLAY.{" "}
+              </span>
+              <span className="text-primary drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]" style={{
+                textShadow: '2px 2px 0 rgba(0,0,0,0.3), 4px 4px 8px rgba(0,0,0,0.5)'
+              }}>
+                LEARN.
+              </span>
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl text-white/85 leading-relaxed animate-fade-up max-w-3xl mx-auto" style={{
-            animationDelay: "0.1s"
-          }}>
-              Hands-on STEM kits, immersive AR/VR learning, and expert-led workshops 
-              for children, schools, and organizations.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 animate-fade-up" style={{
-            animationDelay: "0.2s"
-          }}>
-              <Button variant="hero" size="xl" className="group" onClick={scrollToPrograms}>
-                Explore Programs
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="heroOutline" size="xl" className="group" onClick={scrollToContact}>
-                <Phone className="w-5 h-5 mr-2" />
-                Talk to an Expert
-              </Button>
+            {/* Description with background box */}
+            <div className="inline-block bg-black/40 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/10 animate-fade-up" style={{
+              animationDelay: "0.1s"
+            }}>
+              <p className="text-base md:text-lg lg:text-xl text-white font-medium leading-relaxed">
+                Hands-on STEM kits, immersive AR/VR learning, and expert-led workshops
+                for children, schools, and organizations.
+              </p>
             </div>
 
-            {/* Trust indicators */}
+            {/* Trust indicators - commented out */}
+            {/*
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pt-8 animate-fade-up" style={{
             animationDelay: "0.3s"
           }}>
-              <div className="flex items-center gap-2 text-white/80 text-sm md:text-base">
+              <div className="flex items-center gap-2 text-foreground/80 text-sm md:text-base">
                 <CheckCircle className="w-5 h-5 text-primary" />
                 <span>CBSE-Aligned Learning</span>
               </div>
-              <div className="hidden md:block w-px h-6 bg-white/20" />
-              <div className="flex items-center gap-2 text-white/80 text-sm md:text-base">
+              <div className="hidden md:block w-px h-6 bg-border" />
+              <div className="flex items-center gap-2 text-foreground/80 text-sm md:text-base">
                 <CheckCircle className="w-5 h-5 text-primary" />
                 <span>Trusted by 500+ Schools</span>
               </div>
-              <div className="hidden md:block w-px h-6 bg-white/20" />
-              <div className="flex items-center gap-2 text-white/80 text-sm md:text-base">
+              <div className="hidden md:block w-px h-6 bg-border" />
+              <div className="flex items-center gap-2 text-foreground/80 text-sm md:text-base">
                 <CheckCircle className="w-5 h-5 text-primary" />
                 <span>Designed by Educators</span>
               </div>
             </div>
-
-            {/* Stats */}
-            
+            */}
           </div>
         </div>
       </div>

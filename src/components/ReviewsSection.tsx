@@ -1,70 +1,93 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
-type Testimonial = {
-  name: string;
-  role: string;
-  organization?: string;
-  category: "parent" | "teacher" | "corporate";
-  rating: number;
-  text: string;
-  image?: string;
-};
+type GridItem = {
+  type: "review" | "image";
+  rowSpan?: 1 | 2;
+  colSpan?: 1 | 2;
+} & (
+  | {
+      type: "review";
+      name: string;
+      rating: number;
+      text: string;
+    }
+  | {
+      type: "image";
+      image: string;
+      alt: string;
+    }
+);
 
-const testimonials: Testimonial[] = [
+const gridItems: GridItem[] = [
   {
-    name: "Priya Sharma",
-    role: "Mother of Class 4 student",
-    category: "parent",
+    type: "review",
+    name: "Sarah Johnson",
     rating: 5,
-    text: "My daughter has become so curious about science since we started using SparrowG kits. She now wants to become an engineer! The quality of materials and the clear instructions make learning fun.",
+    text: "My kids absolutely loved their STEM kit! The experiments were fun and educational.",
+    rowSpan: 1,
+    colSpan: 1,
   },
   {
-    name: "Rajesh Kumar",
-    role: "Science Teacher",
-    organization: "Delhi Public School",
-    category: "teacher",
-    rating: 5,
-    text: "SparrowG has transformed our science lab. Students are now actively engaged and excited about experiments. The curriculum alignment makes my job so much easier.",
+    type: "image",
+    image: "/reviews/img002.jpg",
+    alt: "Kids learning with curiosity",
+    rowSpan: 1,
+    colSpan: 1,
   },
   {
-    name: "Anita Desai",
-    role: "HR Manager",
-    organization: "Tech Solutions Pvt Ltd",
-    category: "corporate",
-    rating: 5,
-    text: "We ordered 200 kits for our annual team building event. The custom branding was perfect, and our employees loved the hands-on activities. A refreshing change from usual corporate gifts!",
+    type: "image",
+    image: "/reviews/img001.jpg",
+    alt: "Building construction models",
+    rowSpan: 2,
+    colSpan: 1,
   },
   {
-    name: "Vikram Patel",
-    role: "Father of Class 6 & 8 students",
-    category: "parent",
+    type: "review",
+    name: "Michael Chen",
     rating: 5,
-    text: "Both my kids are hooked! The robotics kit especially has been amazing. They spend hours building and coding together instead of watching TV.",
+    text: "KitsCrate has been amazing for our classroom. Students are so engaged!",
+    rowSpan: 1,
+    colSpan: 1,
   },
   {
-    name: "Dr. Sunita Rao",
-    role: "Principal",
-    organization: "St. Mary's International School",
-    category: "teacher",
-    rating: 5,
-    text: "We've partnered with SparrowG for our entire STEM curriculum. The training provided to our teachers was exceptional, and the ongoing support is invaluable.",
+    type: "image",
+    image: "/reviews/img003.jpg",
+    alt: "Interactive STEM learning session",
+    rowSpan: 1,
+    colSpan: 1,
   },
   {
-    name: "Amit Joshi",
-    role: "L&D Head",
-    organization: "Global Finance Corp",
-    category: "corporate",
+    type: "review",
+    name: "Emily Rodriguez",
     rating: 5,
-    text: "The STEM workshop for our CSR initiative reached over 500 underprivileged students. SparrowG's team was professional and the impact was measurable.",
+    text: "Best STEM learning experience! My daughter is now obsessed with science experiments.",
+    rowSpan: 1,
+    colSpan: 1,
   },
+  {
+    type: "image",
+    image: "/reviews/img002.jpg",
+    alt: "Team working on engineering kit",
+    rowSpan: 1,
+    colSpan: 1,
+  },
+  {
+    type: "review",
+    name: "David Thompson",
+    rating: 5,
+    text: "Fantastic kits! My son learned so much about physics and engineering.",
+    rowSpan: 1,
+    colSpan: 1,
+  },
+  {
+    type: "image",
+    image: "/reviews/img004.jpg",
+    alt: "STEM workshop activity",
+    rowSpan: 1,
+    colSpan: 2,
+  }
 ];
-
-const categoryLabels = {
-  parent: { label: "Parent", color: "bg-destructive/10 text-destructive" },
-  teacher: { label: "Educator", color: "bg-science/10 text-science" },
-  corporate: { label: "Corporate", color: "bg-engineering/10 text-engineering" },
-};
 
 const StarRating = ({ rating }: { rating: number }) => {
   return (
@@ -75,7 +98,7 @@ const StarRating = ({ rating }: { rating: number }) => {
           className={`w-4 h-4 ${
             i < rating
               ? "fill-yellow-400 text-yellow-400"
-              : "fill-muted text-muted"
+              : "fill-gray-200 text-gray-200"
           }`}
         />
       ))}
@@ -84,93 +107,62 @@ const StarRating = ({ rating }: { rating: number }) => {
 };
 
 export const ReviewsSection = () => {
-  const parentReviews = testimonials.filter((t) => t.category === "parent");
-  const teacherReviews = testimonials.filter((t) => t.category === "teacher");
-  const corporateReviews = testimonials.filter((t) => t.category === "corporate");
-
-  const renderTestimonial = (testimonial: Testimonial, index: number) => {
-    const category = categoryLabels[testimonial.category];
-    return (
-      <Card key={index} variant="elevated" className="hover-lift h-full">
-        <CardContent className="p-6 lg:p-8 flex flex-col h-full">
-          <div className="flex items-center justify-between mb-4">
-            <span className={`text-xs font-semibold px-3 py-1 rounded-full ${category.color}`}>
-              {category.label}
-            </span>
-            <StarRating rating={testimonial.rating} />
-          </div>
-          
-          <Quote className="w-8 h-8 text-primary/20 mb-3" />
-          
-          <p className="text-muted-foreground leading-relaxed mb-6 flex-1">
-            "{testimonial.text}"
-          </p>
-          
-          <div className="border-t border-border pt-4">
-            <p className="font-bold text-foreground">{testimonial.name}</p>
-            <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-            {testimonial.organization && (
-              <p className="text-sm text-primary font-medium">{testimonial.organization}</p>
-            )}
-          </div>
-        </CardContent>
-      </Card>
-    );
-  };
-
   return (
-    <section className="section-padding bg-gradient-subtle relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute inset-0 stem-pattern pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+    <section className="py-24 bg-gradient-subtle">
+      <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
-            Testimonials
-          </p>
-          <h2 className="section-title mb-4">
-            What Our <span className="text-gradient-primary">Community</span> Says
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Over <span className="text-gradient-primary">50 million</span> kits
           </h2>
-          <p className="section-subtitle">
-            Hear from parents, educators, and organizations who trust SparrowG
+          <p className="text-2xl md:text-3xl font-semibold text-muted-foreground">
+            delivered worldwide!
+          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
+            Check out what parents are saying and see the excitement we bring to learning!
           </p>
         </div>
 
-        {/* Testimonials by Category */}
-        <div className="space-y-12 max-w-7xl mx-auto">
-          {/* Parents */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-destructive" />
-              From Parents
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {parentReviews.map((t, i) => renderTestimonial(t, i))}
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[200px] gap-4 max-w-7xl mx-auto">
+          {gridItems.map((item, index) => {
+            const rowSpanClass = item.rowSpan === 2 ? "row-span-2" : "row-span-1";
+            const colSpanClass = item.colSpan === 2 ? "md:col-span-2" : "col-span-1";
 
-          {/* Teachers/Schools */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-science" />
-              From Educators
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {teacherReviews.map((t, i) => renderTestimonial(t, i))}
-            </div>
-          </div>
+            if (item.type === "image") {
+              return (
+                <div
+                  key={index}
+                  className={`${rowSpanClass} ${colSpanClass} relative overflow-hidden rounded-lg group`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+              );
+            }
 
-          {/* Corporate */}
-          <div>
-            <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-engineering" />
-              From Corporates
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {corporateReviews.map((t, i) => renderTestimonial(t, i))}
-            </div>
-          </div>
+            // Review card
+            return (
+              <Card
+                key={index}
+                variant="glass"
+                className={`${rowSpanClass} ${colSpanClass} overflow-hidden group hover:shadow-lg transition-all duration-300`}
+              >
+                <CardContent className="p-6 flex flex-col h-full justify-between">
+                  <div>
+                    <StarRating rating={item.rating} />
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                      "{item.text}"
+                    </p>
+                  </div>
+                  <p className="text-xs font-semibold mt-4 text-foreground">
+                    - {item.name}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

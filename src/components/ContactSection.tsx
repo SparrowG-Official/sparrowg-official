@@ -243,7 +243,8 @@ export const ContactSection = () => {
 
           {/* Right Column - Quick Actions & Info */}
           <div className="space-y-6 lg:space-y-8">
-            {/* Book Consultation CTA */}
+            {/* Book Consultation CTA - Commented Out */}
+            {/*
             <Card className="shadow-elevated border-0 bg-primary text-primary-foreground overflow-hidden">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4">
@@ -262,13 +263,15 @@ export const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
+            */}
 
-            {/* WhatsApp Quick Contact */}
+            {/* WhatsApp Quick Contact - Commented Out */}
+            {/*
             <Card className="shadow-elevated border-0 bg-[#25D366]/10 overflow-hidden hover-lift">
               <CardContent className="p-6">
-                <a 
-                  href="https://wa.me/919493017356" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/919493017356"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4"
                 >
@@ -282,6 +285,7 @@ export const ContactSection = () => {
                 </a>
               </CardContent>
             </Card>
+            */}
 
             {/* Contact Details */}
             <Card className="shadow-elevated border-0 hover-lift">

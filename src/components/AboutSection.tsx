@@ -104,7 +104,8 @@ export const AboutSection = () => {
             </CardContent>
           </Card>
 
-          {/* Mission & Vision */}
+          {/* Mission & Vision - Commented Out */}
+          {/*
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <Card variant="glass" className="hover-lift">
               <CardContent className="p-8">
@@ -113,7 +114,7 @@ export const AboutSection = () => {
                 </div>
                 <h4 className="text-xl font-bold mb-4">Our Mission</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  To make quality STEM education accessible, engaging, and impactful for every 
+                  To make quality STEM education accessible, engaging, and impactful for every
                   learner—from curious kindergarteners to innovative corporate teams.
                 </p>
               </CardContent>
@@ -125,14 +126,16 @@ export const AboutSection = () => {
                 </div>
                 <h4 className="text-xl font-bold mb-4">Our Vision</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  To become India's most trusted STEM education partner, building a complete 
+                  To become India's most trusted STEM education partner, building a complete
                   ecosystem that nurtures the innovators and problem-solvers of tomorrow.
                 </p>
               </CardContent>
             </Card>
           </div>
+          */}
 
-          {/* Values */}
+          {/* Values - Commented Out */}
+          {/*
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {values.map((value, index) => {
               const IconComponent = value.icon;
@@ -149,24 +152,26 @@ export const AboutSection = () => {
               );
             })}
           </div>
+          */}
 
-          {/* Roadmap */}
+          {/* Roadmap - Commented Out */}
+          {/*
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold">Our Roadmap</h3>
             <p className="text-muted-foreground mt-2">Building the future of STEM education</p>
           </div>
-          
+
           <div className="grid md:grid-cols-4 gap-4">
             {roadmapItems.map((item, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 variant={item.status === "active" ? "elevated" : "default"}
                 className={`relative overflow-hidden ${item.status === "active" ? "border-primary" : ""}`}
               >
                 <CardContent className="p-6">
                   <span className={`inline-block px-3 py-1 text-xs font-bold rounded-full mb-3 ${
-                    item.status === "active" 
-                      ? "bg-primary text-primary-foreground" 
+                    item.status === "active"
+                      ? "bg-primary text-primary-foreground"
                       : "bg-muted text-muted-foreground"
                   }`}>
                     {item.phase}
@@ -177,6 +182,7 @@ export const AboutSection = () => {
               </Card>
             ))}
           </div>
+          */}
         </div>
       </div>
     </section>

@@ -88,14 +88,14 @@ export const FutureVision = () => {
         </div>
 
         {/* 3D Carousel */}
-        <div className="relative h-[320px] lg:h-[280px] flex items-center justify-center">
+        <div className="relative h-[380px] lg:h-[340px] flex items-center justify-center">
           {visions.map((vision, index) => {
             const position = getSlidePosition(index);
             const isActive = position === 0;
             const isPrev = position === -1;
             const isNext = position === 1;
             const isVisible = Math.abs(position) <= 1;
-            
+
             return (
               <div
                 key={index}
@@ -104,28 +104,28 @@ export const FutureVision = () => {
                   !isVisible ? 'opacity-0 pointer-events-none' : ''
                 }`}
                 style={{
-                  transform: isActive 
-                    ? 'translateX(0) scale(1)' 
-                    : isPrev 
-                      ? 'translateX(-70%) scale(0.7)' 
-                      : isNext 
-                        ? 'translateX(70%) scale(0.7)'
+                  transform: isActive
+                    ? 'translateX(0) scale(1)'
+                    : isPrev
+                      ? 'translateX(-75%) scale(0.75)'
+                      : isNext
+                        ? 'translateX(75%) scale(0.75)'
                         : position < -1
-                          ? 'translateX(-120%) scale(0.5)'
-                          : 'translateX(120%) scale(0.5)',
+                          ? 'translateX(-130%) scale(0.5)'
+                          : 'translateX(130%) scale(0.5)',
                   zIndex: isActive ? 30 : isPrev || isNext ? 20 : 10,
                   opacity: isActive ? 1 : isPrev || isNext ? 0.6 : 0,
                 }}
               >
-                <Card 
-                  variant="glass" 
-                  className={`w-[280px] lg:w-[400px] overflow-hidden transition-shadow duration-500 ${
+                <Card
+                  variant="glass"
+                  className={`w-[320px] lg:w-[480px] overflow-hidden transition-shadow duration-500 ${
                     isActive ? 'shadow-2xl' : 'shadow-lg'
                   }`}
                 >
                   <CardContent className="p-0">
                     {/* Image */}
-                    <div className="relative h-36 lg:h-44 overflow-hidden bg-gradient-to-br from-muted/30 to-muted/10">
+                    <div className="relative h-44 lg:h-52 overflow-hidden bg-gradient-to-br from-muted/30 to-muted/10">
                       <img 
                         src={vision.image} 
                         alt={vision.title}

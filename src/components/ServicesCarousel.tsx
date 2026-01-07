@@ -22,22 +22,10 @@ const services = [
     image: serviceStemKits,
     icon: Box,
     color: "bg-science/10 text-science",
+    gradient: "from-science/20 to-science/5",
     audience: ["Parents", "Schools"],
-    ageRange: "Ages 5-16",
-    highlights: [
-      { icon: Target, text: "100+ Project modules" },
-      { icon: Zap, text: "150+ Components" },
-      { icon: Clock, text: "Video tutorials" },
-      { icon: Award, text: "Certificates" },
-    ],
-    features: [
-      "Robotics & Electronics",
-      "Coding with Arduino",
-      "Physics concepts",
-      "Chemistry experiments",
-    ],
-    outcomes: ["Problem-solving", "Scientific thinking", "Creativity"],
-    pricing: "₹1,499",
+    features: ["Age 5-16 range", "100+ components", "Video guides", "Safe materials"],
+    highlights: ["Build robots", "Create circuits", "Science experiments"],
   },
   {
     id: 2,
@@ -47,21 +35,10 @@ const services = [
     image: serviceArvr,
     icon: Glasses,
     color: "bg-technology/10 text-technology",
+    gradient: "from-technology/20 to-technology/5",
     audience: ["Schools", "Corporates"],
-    highlights: [
-      { icon: Target, text: "50+ VR modules" },
-      { icon: Zap, text: "Virtual labs" },
-      { icon: Clock, text: "Flexible scheduling" },
-      { icon: Award, text: "Progress tracking" },
-    ],
-    features: [
-      "3D anatomy exploration",
-      "Virtual chemistry",
-      "Space journeys",
-      "Historical tours",
-    ],
-    outcomes: ["Concept visualization", "Memory retention", "Engagement"],
-    pricing: "₹24,999/sem",
+    features: ["Virtual labs", "3D simulations", "Multi-user mode", "Progress tracking"],
+    highlights: ["3D anatomy exploration", "Space journeys", "Virtual chemistry"],
   },
   {
     id: 3,
@@ -71,21 +48,10 @@ const services = [
     image: serviceWorkshops,
     icon: Users,
     color: "bg-engineering/10 text-engineering",
+    gradient: "from-engineering/20 to-engineering/5",
     audience: ["Schools", "Corporates"],
-    highlights: [
-      { icon: Target, text: "Custom curriculum" },
-      { icon: Zap, text: "Hands-on projects" },
-      { icon: Clock, text: "Flexible formats" },
-      { icon: Award, text: "Certifications" },
-    ],
-    features: [
-      "Robotics & automation",
-      "AI & ML basics",
-      "IoT & smart devices",
-      "Design thinking",
-    ],
-    outcomes: ["Practical skills", "Team collaboration", "Industry exposure"],
-    pricing: "₹4,999/session",
+    features: ["Certified trainers", "Custom curriculum", "Hands-on projects", "Certificates"],
+    highlights: ["Team collaboration", "Practical skills", "Industry exposure"],
   },
   {
     id: 4,
@@ -95,21 +61,10 @@ const services = [
     image: serviceGifting,
     icon: Gift,
     color: "bg-mathematics/10 text-mathematics",
+    gradient: "from-mathematics/20 to-mathematics/5",
     audience: ["Corporates"],
-    highlights: [
-      { icon: Target, text: "Brand customization" },
-      { icon: Zap, text: "Pan-India delivery" },
-      { icon: Clock, text: "2-4 weeks" },
-      { icon: Award, text: "CSR reporting" },
-    ],
-    features: [
-      "Family STEM kits",
-      "Executive gadgets",
-      "Team challenges",
-      "Premium packaging",
-    ],
-    outcomes: ["Brand visibility", "Memorable gifting", "Educational impact"],
-    pricing: "₹999/unit",
+    features: ["Custom branding", "Bulk orders", "Pan-India delivery", "Gift packaging"],
+    highlights: ["Brand visibility", "Educational impact", "Memorable gifting"],
   },
 ];
 
@@ -158,7 +113,7 @@ export const ServicesCarousel = () => {
 
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-16">
           <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
             What We Offer
           </p>
@@ -171,7 +126,7 @@ export const ServicesCarousel = () => {
         </div>
 
         {/* 3D Carousel */}
-        <div className="relative h-[420px] lg:h-[380px] flex items-center justify-center perspective-1000">
+        <div className="relative h-[520px] lg:h-[480px] flex items-center justify-center perspective-1000">
           {services.map((service, index) => {
             const position = getSlidePosition(index);
             const isActive = position === 0;
@@ -202,23 +157,21 @@ export const ServicesCarousel = () => {
                   opacity: isActive ? 1 : isPrev || isNext ? 0.7 : 0,
                 }}
               >
-                <Card 
-                  variant="elevated" 
-                  className={`w-[320px] lg:w-[520px] overflow-hidden transition-shadow duration-500 ${
+                <Card
+                  variant="elevated"
+                  className={`w-[340px] lg:w-[580px] overflow-hidden transition-shadow duration-500 ${
                     isActive ? 'shadow-2xl' : 'shadow-lg'
                   }`}
                 >
                   <CardContent className="p-0">
-                    <div className="flex flex-col lg:flex-row">
-                      {/* Image Section */}
-                      <div className="relative h-40 lg:h-auto lg:w-48 flex-shrink-0 overflow-hidden bg-gradient-to-br from-muted/50 to-muted">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-contain p-4"
-                        />
+                    <div className="flex flex-col">
+                      {/* Image/Icon Section - Top */}
+                      <div className={`relative h-56 bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                        <div className={`w-20 h-20 rounded-2xl ${service.color} flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300`}>
+                          <IconComponent className="w-12 h-12" />
+                        </div>
                         {/* Floating badges */}
-                        <div className="absolute top-2 left-2 flex flex-wrap gap-1">
+                        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                           {service.audience.map((aud, i) => (
                             <Badge key={i} className="bg-background/90 text-foreground text-xs backdrop-blur-sm">
                               {aud}
@@ -227,58 +180,37 @@ export const ServicesCarousel = () => {
                         </div>
                       </div>
 
-                      {/* Content Section */}
-                      <div className="p-4 lg:p-5 flex-1">
+                      {/* Content Section - Bottom */}
+                      <div className="p-5 lg:p-6">
                         {/* Header */}
-                        <div className="flex items-start gap-3 mb-3">
-                          <div className={`w-10 h-10 rounded-xl ${service.color} flex items-center justify-center flex-shrink-0`}>
-                            <IconComponent className="w-5 h-5" />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-lg font-bold leading-tight">{service.title}</h3>
-                            <p className="text-xs text-primary font-medium">{service.tagline}</p>
-                          </div>
+                        <div className="mb-3">
+                          <h3 className="text-xl lg:text-2xl font-bold leading-tight mb-2">{service.title}</h3>
+                          <p className="text-sm text-primary font-medium">{service.tagline}</p>
                         </div>
 
                         {/* Description - only show on active */}
                         {isActive && (
                           <>
-                            <p className="text-sm text-muted-foreground leading-relaxed mb-3 line-clamp-2">
+                            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                               {service.description}
                             </p>
 
-                            {/* Features Grid */}
-                            <div className="grid grid-cols-2 gap-1.5 mb-3">
+                            {/* Features */}
+                            <div className="flex flex-wrap gap-2 mb-4">
                               {service.features.map((feature, i) => (
-                                <div key={i} className="flex items-start gap-1.5">
-                                  <CheckCircle className="w-3.5 h-3.5 text-primary mt-0.5 flex-shrink-0" />
-                                  <span className="text-xs text-muted-foreground">{feature}</span>
-                                </div>
+                                <span key={i} className="text-xs px-3 py-1 rounded-full bg-muted text-muted-foreground">
+                                  {feature}
+                                </span>
                               ))}
                             </div>
 
-                            {/* Outcomes */}
-                            <div className="flex flex-wrap gap-1.5 mb-3">
-                              {service.outcomes.map((outcome, i) => (
-                                <Badge key={i} variant="outline" className="text-xs bg-background/50">
-                                  {outcome}
-                                </Badge>
-                              ))}
-                            </div>
-
-                            {/* Footer */}
-                            <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                              <div>
-                                <p className="text-xs text-muted-foreground">From</p>
-                                <p className="text-lg font-bold text-primary">{service.pricing}</p>
-                              </div>
-                              <Link to="/programs">
-                                <Button size="sm" className="group">
-                                  Explore
-                                  <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                              </Link>
-                            </div>
+                            {/* Learn More Button */}
+                            <Link to="/programs">
+                              <Button variant="outline" className="group/btn hover-lift w-full">
+                                Learn More
+                                <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                              </Button>
+                            </Link>
                           </>
                         )}
                       </div>

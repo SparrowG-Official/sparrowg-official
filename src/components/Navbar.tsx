@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Bird } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SparrowLogo } from "@/components/SparrowLogo";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -48,8 +47,10 @@ export const Navbar = () => {
       return (
         <button
           onClick={() => handleNavClick(link.href)}
-          className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-            isScrolled || !isHomePage ? "text-muted-foreground" : "text-white/80 hover:text-white"
+          className={`text-sm font-semibold transition-colors duration-200 ${
+            isScrolled || !isHomePage
+              ? "text-muted-foreground hover:text-primary"
+              : "text-white hover:text-primary drop-shadow-lg"
           }`}
         >
           {link.name}
@@ -60,8 +61,10 @@ export const Navbar = () => {
     return (
       <Link
         to={link.href}
-        className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-          isScrolled || !isHomePage ? "text-muted-foreground" : "text-white/80 hover:text-white"
+        className={`text-sm font-semibold transition-colors duration-200 ${
+          isScrolled || !isHomePage
+            ? "text-muted-foreground hover:text-primary"
+            : "text-white hover:text-primary drop-shadow-lg"
         }`}
       >
         {link.name}
@@ -70,17 +73,29 @@ export const Navbar = () => {
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || !isHomePage
-          ? "bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-soft" 
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-lg border-b border-border/50 shadow-soft"
+          : "bg-gradient-to-b from-black/40 to-transparent backdrop-blur-sm"
       }`}
     >
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/">
-            <SparrowLogo />
+            <div className="flex items-center gap-2">
+              <div className="relative">
+                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-soft">
+                  <Bird className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full animate-pulse-soft" />
+              </div>
+              <span className={`text-xl font-bold transition-colors duration-200 ${
+                isScrolled || !isHomePage ? "text-foreground" : "text-white"
+              }`}>
+                Sparrow<span className="text-primary">G</span>
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -104,7 +119,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${isScrolled || !isHomePage ? "text-foreground" : "text-white"}`}
+            className={`lg:hidden p-2 ${isScrolled || !isHomePage ? "text-foreground" : "text-white drop-shadow-lg"}`}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >

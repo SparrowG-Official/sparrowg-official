@@ -77,7 +77,7 @@ export const ProductShowcase = () => {
             <img
               src={showcaseImages[currentIndex].src}
               alt={showcaseImages[currentIndex].alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-1000 ease-in-out group-hover:scale-105"
             />
             {/* Overlay with caption */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
