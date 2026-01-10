@@ -72,7 +72,7 @@ export const AboutSection = () => {
                   <h3 className="text-2xl lg:text-3xl font-bold mb-6">
                     Why We Started SparrowG
                   </h3>
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
                     <p>
                       SparrowG was born from a simple observation: traditional education often fails to ignite 
                       the natural curiosity that every child possesses. We saw students memorizing formulas 

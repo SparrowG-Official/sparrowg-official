@@ -67,7 +67,7 @@ const gridItems: GridItem[] = [
   },
   {
     type: "image",
-    image: "/reviews/img002.jpg",
+    image: "/reviews/img005.jpeg",
     alt: "Team working on engineering kit",
     rowSpan: 1,
     colSpan: 1,

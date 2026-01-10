@@ -4,11 +4,6 @@ import { Button } from "@/components/ui/button";
 
 const showcaseImages = [
   {
-    src: "/images/C0813T01.JPG",
-    alt: "Building construction models",
-    caption: "Concept Driven Kits",
-  },
-  {
     src: "/images/C0872T01.JPG",
     alt: "Interactive STEM learning session",
     caption: "Large Scale Models",
@@ -23,6 +18,11 @@ const showcaseImages = [
     alt: "Creative STEM projects",
     caption: "Parent Child Bonding",
   },
+  {
+    src: "/images/C0813T01.JPG",
+    alt: "Building construction models",
+    caption: "Concept Driven Kits",
+  }
 ];
 
 export const ProductShowcase = () => {
