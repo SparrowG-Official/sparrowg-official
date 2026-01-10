@@ -6,8 +6,8 @@ import { useState } from "react";
 const products = [
   {
     id: 1,
-    name: "Crane",
-    image: "/images/C0813T01.JPG",
+    name: "Mechaverse Crane",
+    image: "/products/crane.jpeg",
     price: "₹2,499",
     originalPrice: "₹3,199",
     discount: "-22%",
@@ -17,8 +17,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Dump Truck",
-    image: "/images/C0872T01.JPG",
+    name: "Mechaverse Dump Truck",
+    image: "/products/truck.jpeg",
     price: "₹1,799",
     originalPrice: "₹2,299",
     discount: "-22%",
@@ -28,8 +28,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Fork Lifter",
-    image: "/images/C0886T01.JPG",
+    name: "Mechaverse Excavator",
+    image: "/products/excavator.jpeg",
     price: "₹1,299",
     originalPrice: "₹1,699",
     discount: "-24%",
@@ -65,9 +65,6 @@ export const FeaturedProducts = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
-            Shop Now
-          </p>
           <h2 className="section-title mb-6">
             Featured <span className="text-gradient-primary">Learning Kits</span>
           </h2>
@@ -156,19 +153,9 @@ export const FeaturedProducts = () => {
                   </div>
 
                   {/* What's included */}
-                  <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
+                  <p className="text-xs text-muted-foreground mb-4 line-clamp-2">
                     {product.includes}
                   </p>
-
-                  {/* Price */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xl font-bold text-foreground">
-                      {product.price}
-                    </span>
-                    <span className="text-sm text-muted-foreground line-through">
-                      {product.originalPrice}
-                    </span>
-                  </div>
 
                   <Button variant="outline" className="w-full hover-lift">
                     <ShoppingCart className="w-4 h-4 mr-2" />

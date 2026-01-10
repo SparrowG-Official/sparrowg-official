@@ -52,9 +52,6 @@ export const AudienceSegmentation = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
-            Find Your Path
-          </p>
           <h2 className="section-title mb-6">
             Built for <span className="text-gradient-primary">Every Learner</span>
           </h2>

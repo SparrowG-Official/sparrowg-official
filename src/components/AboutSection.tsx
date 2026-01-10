@@ -55,9 +55,9 @@ export const AboutSection = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
+          {/* <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
             About Us
-          </p>
+          </p> */}
           <h2 className="section-title mb-6">
             The <span className="text-gradient-primary">SparrowG</span> Story
           </h2>
@@ -84,16 +84,12 @@ export const AboutSection = () => {
                       Through hands-on kits, immersive experiences, and expert-led workshops, we bring 
                       science, technology, engineering, and math to life.
                     </p>
-                    <p className="font-semibold text-foreground">
-                      Today, we're proud to partner with 500+ schools and have delivered over 50 million 
-                      learning components to curious minds across India and beyond.
-                    </p>
                   </div>
                 </div>
                 <div className="relative">
                   <div className="aspect-square rounded-3xl overflow-hidden shadow-elevated">
                     <img 
-                      src="/images/DSC00838.JPG" 
+                      src="/images/DSC00841.jpeg" 
                       alt="SparrowG team working with students"
                       className="w-full h-full object-cover"
                     />

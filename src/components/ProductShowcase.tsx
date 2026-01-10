@@ -6,22 +6,22 @@ const showcaseImages = [
   {
     src: "/images/C0813T01.JPG",
     alt: "Building construction models",
-    caption: "Large Scale Models",
+    caption: "Concept Driven Kits",
   },
   {
     src: "/images/C0872T01.JPG",
     alt: "Interactive STEM learning session",
-    caption: "Coding Enabled Kits",
+    caption: "Large Scale Models",
   },
   {
     src: "/images/C0886T01.JPG",
     alt: "Team working on engineering kit",
-    caption: "Parent Child Bonding",
+    caption: "Coding Enabled Kits",
   },
   {
     src: "/images/DSC00840.JPG",
     alt: "Creative STEM projects",
-    caption: "Concept Driven Kits",
+    caption: "Parent Child Bonding",
   },
 ];
 
@@ -59,9 +59,6 @@ export const ProductShowcase = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
-            Real Learning in Action
-          </p>
           <h2 className="section-title mb-6">
             The <span className="text-gradient-primary">Learning Experiences</span>
           </h2>
@@ -77,10 +74,10 @@ export const ProductShowcase = () => {
             <img
               src={showcaseImages[currentIndex].src}
               alt={showcaseImages[currentIndex].alt}
-              className="w-full h-full object-cover transition-all duration-1000 ease-in-out group-hover:scale-105"
+              className="w-full h-full object-cover transition-all duration-1000 ease-in-out group-hover:scale-105 brightness-110"
             />
             {/* Overlay with caption */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
               <p className="text-white text-xl md:text-2xl lg:text-3xl font-bold leading-tight">
                 {showcaseImages[currentIndex].caption}

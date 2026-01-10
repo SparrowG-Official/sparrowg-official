@@ -76,9 +76,6 @@ export const FutureVision = () => {
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-10">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-            Coming Soon
-          </p>
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             The <span className="text-gradient-primary">Future</span> with SparrowG
           </h2>

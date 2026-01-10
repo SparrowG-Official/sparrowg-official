@@ -103,9 +103,6 @@ export const ContactSection = () => {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
-            Get in Touch
-          </p>
           <h2 className="section-title mb-6">
             Let's <span className="text-gradient-primary">Connect</span>
           </h2>
@@ -156,7 +153,6 @@ export const ContactSection = () => {
                     <Label htmlFor="fullName" className="font-medium">Full Name *</Label>
                     <Input
                       id="fullName"
-                      placeholder="John Doe"
                       {...register("fullName")}
                       className="mt-2 h-12 rounded-xl"
                     />
@@ -169,7 +165,6 @@ export const ContactSection = () => {
                     <Input
                       id="email"
                       type="email"
-                      placeholder="john@example.com"
                       {...register("email")}
                       className="mt-2 h-12 rounded-xl"
                     />
@@ -332,6 +327,21 @@ export const ContactSection = () => {
                     <div>
                       <p className="font-semibold">Office Hours</p>
                       <p className="text-sm text-muted-foreground">Mon-Fri: 10 AM - 6 PM | Sat: 10 AM - 4 PM</p>
+                    </div>
+                  </div>
+
+                  {/* Google Maps Embed */}
+                  <div className="mt-8 rounded-2xl overflow-hidden shadow-card">
+                    <div className="mapouter" style={{position: 'relative', textAlign: 'right', width: '100%', height: '400px'}}>
+                      <div className="gmap_canvas" style={{overflow: 'hidden', background: 'none', width: '100%', height: '400px'}}>
+                        <iframe
+                          className="gmap_iframe"
+                          frameBorder="0"
+                          scrolling="no"
+                          style={{width: '100%', height: '400px'}}
+                          src="https://maps.google.com/maps?width=600&height=400&hl=en&q=tworks&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+                        ></iframe>
+                      </div>
                     </div>
                   </div>
                 </div>

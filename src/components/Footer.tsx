@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube, Send, Bird } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const productLinks = [
@@ -51,8 +51,8 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shadow-glow">
-                  <span className="text-primary-foreground text-2xl">🐦</span>
+                <div className="w-12 h-12 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                  <Bird className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <span className="text-2xl font-bold">
                   Sparrow<span className="text-primary">G</span>

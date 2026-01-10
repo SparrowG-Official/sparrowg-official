@@ -8,10 +8,6 @@ import {
   Clock, Target, Award, Zap
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import serviceStemKits from "@/assets/service-stem-kits.png";
-import serviceArvr from "@/assets/service-arvr.png";
-import serviceWorkshops from "@/assets/service-workshops.png";
-import serviceGifting from "@/assets/service-gifting.png";
 
 const services = [
   {
@@ -19,20 +15,20 @@ const services = [
     title: "STEM Learning Kits",
     tagline: "Hands-on learning that sparks curiosity",
     description: "Our comprehensive STEM kits bring science, technology, engineering, and math to life through hands-on projects designed by educators and engineers.",
-    image: serviceStemKits,
+    image: "/services/stem-kits.jpg",
     icon: Box,
     color: "bg-science/10 text-science",
     gradient: "from-science/20 to-science/5",
     audience: ["Parents", "Schools"],
-    features: ["Age 7-15 range", "100+ components", "Video guides", "Safe materials"],
+    features: ["Age 7-15 years", "200+ components", "Video guides", "Safe materials"],
     highlights: ["Build robots", "Create circuits", "Science experiments"],
   },
   {
     id: 2,
     title: "AR/VR Learning",
     tagline: "Immersive education beyond textbooks",
-    description: "Transform abstract concepts into tangible experiences with cutting-edge AR/VR solutions. Explore virtual labs and witness history firsthand.",
-    image: serviceArvr,
+    description: "Transform abstract concepts into multi-dimensional experiences with cutting-edge AR/VR solutions. Explore one-of-its-kind metaverse of learning.",
+    image: "/services/ar-vr-learning.jpg",
     icon: Glasses,
     color: "bg-technology/10 text-technology",
     gradient: "from-technology/20 to-technology/5",
@@ -45,7 +41,7 @@ const services = [
     title: "Expert Workshops",
     tagline: "Learn from industry professionals",
     description: "Interactive workshops by certified trainers. Perfect for schools and corporate teams seeking hands-on STEM learning with mentorship.",
-    image: serviceWorkshops,
+    image: "/services/workshops.png",
     icon: Users,
     color: "bg-engineering/10 text-engineering",
     gradient: "from-engineering/20 to-engineering/5",
@@ -57,8 +53,8 @@ const services = [
     id: 4,
     title: "Corporate Gifting",
     tagline: "Gifts that educate and inspire",
-    description: "Unique STEM-themed gifts for employee engagement, client appreciation, and CSR initiatives with measurable educational impact.",
-    image: serviceGifting,
+    description: "Unique STEM-themed gifts for employee engagement, client appreciation, and CSR initiatives",
+    image: "/services/corporate-gifting.jpg",
     icon: Gift,
     color: "bg-mathematics/10 text-mathematics",
     gradient: "from-mathematics/20 to-mathematics/5",
@@ -114,9 +110,9 @@ export const ServicesCarousel = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+          {/* <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
             What We Offer
-          </p>
+          </p> */}
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Our <span className="text-gradient-primary">Services</span>
           </h2>
@@ -166,10 +162,14 @@ export const ServicesCarousel = () => {
                   <CardContent className="p-0">
                     <div className="flex flex-col">
                       {/* Image/Icon Section - Top */}
-                      <div className={`relative h-56 bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                        <div className={`w-20 h-20 rounded-2xl ${service.color} flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300`}>
-                          <IconComponent className="w-12 h-12" />
-                        </div>
+                      <div className="relative h-56 overflow-hidden">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                         {/* Floating badges */}
                         <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                           {service.audience.map((aud, i) => (

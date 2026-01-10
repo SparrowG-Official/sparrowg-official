@@ -8,6 +8,7 @@ const services = [
     title: "STEM Kits",
     subtitle: "Hands-on learning that sparks curiosity",
     description: "Transform abstract concepts into tangible experiences with cutting-edge STEM kits designed for ages 7-15.",
+    image: "/services/stem-kits.jpg",
     icon: Box,
     color: "bg-science/10 text-science",
     gradient: "from-science/20 to-science/5",
@@ -20,6 +21,7 @@ const services = [
     title: "AR/VR Learning",
     subtitle: "Immersive education beyond textbooks",
     description: "Transform abstract concepts into multi-dimensional experiences with cutting-edge AR/VR solutions. Explore one-of-its-kind metaverse of learning.",
+    image: "/services/ar-vr-learning.jpg",
     icon: Glasses,
     color: "bg-technology/10 text-technology",
     gradient: "from-technology/20 to-technology/5",
@@ -32,6 +34,7 @@ const services = [
     title: "Workshops",
     subtitle: "Learn from industry professionals",
     description: "Expert-led interactive sessions for schools, communities, and corporate teams with real-world applications.",
+    image: "/services/workshops.png",
     icon: Users,
     color: "bg-engineering/10 text-engineering",
     gradient: "from-engineering/20 to-engineering/5",
@@ -44,6 +47,7 @@ const services = [
     title: "Corporate Gifting",
     subtitle: "Educational branded gifting solutions",
     description: "Unique STEM-themed gifts for employee engagement, client appreciation, and CSR initiatives",
+    image: "/services/corporate-gifting.jpg",
     icon: Gift,
     color: "bg-mathematics/10 text-mathematics",
     gradient: "from-mathematics/20 to-mathematics/5",
@@ -63,9 +67,6 @@ export const ServicesSection = () => {
 
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-widest mb-4">
-            What We Offer
-          </p>
           <h2 className="section-title mb-6">
             Our <span className="text-gradient-primary">Products</span>
           </h2>
@@ -85,10 +86,14 @@ export const ServicesSection = () => {
                 className="group hover-lift overflow-hidden"
               >
                 {/* Image/Icon Section */}
-                <div className={`relative h-64 bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                  <div className={`w-20 h-20 rounded-2xl ${service.color} flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-all duration-300`}>
-                    <IconComponent className="w-12 h-12" />
-                  </div>
+                <div className="relative h-64 bg-gradient-to-br overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </div>
 
                 <CardContent className="p-6 lg:p-8">

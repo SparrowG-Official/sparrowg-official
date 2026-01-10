@@ -127,10 +127,10 @@ export const ReviewsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[200px] gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 auto-rows-[280px] gap-4 max-w-7xl mx-auto">
           {gridItems.map((item, index) => {
             const rowSpanClass = item.rowSpan === 2 ? "row-span-2" : "row-span-1";
-            const colSpanClass = item.colSpan === 2 ? "md:col-span-2" : "col-span-1";
+            const colSpanClass = item.colSpan === 2 ? "md:col-span-2 lg:col-span-2" : "col-span-1";
 
             if (item.type === "image") {
               return (

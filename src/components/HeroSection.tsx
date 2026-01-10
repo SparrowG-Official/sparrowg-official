@@ -17,8 +17,6 @@ export const HeroSection = () => {
         <img src="/images/DSC00817.JPG" alt="Kids learning with curiosity and engagement" className="w-full h-full object-cover brightness-105" />
         {/* Subtle dark gradient at top for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        {/* Slight vignette effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
